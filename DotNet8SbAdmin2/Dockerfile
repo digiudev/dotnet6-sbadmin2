@@ -8,16 +8,16 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["SbAdmin2/SbAdmin2.csproj", "SbAdmin2/"]
-RUN dotnet restore "SbAdmin2/SbAdmin2.csproj"
+COPY ["DotNet8SbAdmin2/DotNet8SbAdmin2.csproj", "DotNet8SbAdmin2/"]
+RUN dotnet restore "DotNet8SbAdmin2/DotNet8SbAdmin2.csproj"
 COPY . .
-WORKDIR "/src/SbAdmin2"
-RUN dotnet build "SbAdmin2.csproj" -c Release -o /app/build
+WORKDIR "/src/DotNet8SbAdmin2"
+RUN dotnet build "DotNet8SbAdmin2.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SbAdmin2.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "DotNet8SbAdmin2.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SbAdmin2.dll"]
+ENTRYPOINT ["dotnet", "DotNet8SbAdmin2.dll"]
