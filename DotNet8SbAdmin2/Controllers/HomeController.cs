@@ -1,9 +1,8 @@
-using Microsoft.AspNetCore.Identity;
+using DotNet8SbAdmin2.Models;
 using Microsoft.AspNetCore.Mvc;
-using SbAdmin2.Models;
 using System.Diagnostics;
 
-namespace SbAdmin2.Controllers
+namespace DotNet8SbAdmin2.Controllers
 {
     public class HomeController : Controller
     {

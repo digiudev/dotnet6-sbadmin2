@@ -1,4 +1,4 @@
-namespace SbAdmin2.Models
+namespace DotNet8SbAdmin2.Models
 {
     public class ErrorViewModel
     {

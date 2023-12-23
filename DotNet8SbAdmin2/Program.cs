@@ -1,6 +1,6 @@
+using DotNet8SbAdmin2.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SbAdmin2.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
